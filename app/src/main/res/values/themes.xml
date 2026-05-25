@@ -1,9 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.BudiMadani" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
 
-    <style name="Theme.BudiMadani" parent="Base.Theme.BudiMadani" />
+        <style name="Theme.BudiMadani" parent="Theme.Material3.DayNight.NoActionBar">
+
+            <item name="colorPrimary">#005FAF</item>
+            <item name="colorPrimaryContainer">#D1E4FF</item>
+            <item name="colorOnPrimaryContainer">#001D36</item>
+            <item name="colorSecondaryContainer">#E0E2EC</item>
+            <item name="colorOnSecondaryContainer">#1A1C1E</item>
+            <item name="colorSurface">#FDFCFF</item>
+            <item name="colorSurfaceContainerHigh">#F5F6FA</item>
+        </style>
+
 </resources>

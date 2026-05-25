@@ -2,4 +2,17 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="md3_blue_primary">#005FAF</color>
+    <color name="md3_blue_primary_container">#D1E4FF</color>
+    <color name="md3_blue_on_primary_container">#001D36</color>
+
+    <color name="md3_blue_secondary_container">#E0E2EC</color>
+    <color name="md3_blue_on_secondary_container">#1A1C1E</color>
+
+    <color name="md3_blue_surface">#FDFCFF</color>
+    <color name="md3_blue_surface_variant">#F5F6FA</color>
+    <color name="md3_blue_text_variant">#43474E</color>
+
 </resources>
