@@ -36,4 +36,4 @@ A mobile application built with Android Studio that helps Malaysian users estima
 ---
 
 ## 📜 License
-© 2026 Smart Petrol Calculator. All rights reserved.
+© 2026 Petrol Budi Madani. All rights reserved.
