@@ -42,7 +42,7 @@
             android:layout_marginStart="4dp"/>
 
         <com.google.android.material.button.MaterialButtonToggleGroup
-            android:id="@+id/toggleInputMode"
+            android:id="@+id/togglePetrolType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -87,7 +87,7 @@
             android:layout_marginStart="4dp"/>
 
         <com.google.android.material.button.MaterialButtonToggleGroup
-            android:id="@+id/toggleInputType"
+            android:id="@+id/toggleInputMode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
