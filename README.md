@@ -14,7 +14,7 @@ A mobile application built with Android Studio that helps Malaysian users estima
 
 ## 🛠️ Built With
 * **Language:** Java
-* **IDE:** Android Studio
+* **IDE:** Android Studio Panda 2
 * **Design:** Material Design Components
 
 ---
