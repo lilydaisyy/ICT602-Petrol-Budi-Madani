@@ -41,6 +41,7 @@ public class Home extends Fragment {
 
     // References to your individual fuel buttons for custom background tints
     private MaterialButton btnRON95, btnRON97, btnDiesel;
+    private MaterialButton btnModeLiters, btnModeRM;
 
     public Home() {
         // Required empty constructor
@@ -76,6 +77,10 @@ public class Home extends Fragment {
         btnRON97 = view.findViewById(R.id.btnRON97);
         btnDiesel = view.findViewById(R.id.btnDiesel);
 
+        // Link mode buttons
+        btnModeLiters = view.findViewById(R.id.btnModeLiters);
+        btnModeRM = view.findViewById(R.id.btnModeRM);
+
         // --- Handle Petrol Type Selection and Background Coloring ---
         updateButtonColors(togglePetrolType.getCheckedButtonId()); // Initial state on load
 
@@ -91,8 +96,13 @@ public class Home extends Fragment {
             }
         });
 
+        // --- Handle Input Mode Selection and Background Coloring ---
+        updateModeButtonColors(toggleInputMode.getCheckedButtonId());
+
         toggleInputMode.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
             if (isChecked) {
+                updateModeButtonColors(checkedId);
+
                 if (checkedId == R.id.btnModeLiters) {
                     tilMainInput.setHint("Total Fuel (Liters)");
                     tvTotalCostLabel.setText("Estimated Final Cost");
@@ -150,6 +160,31 @@ public class Home extends Fragment {
         } else if (checkedId == R.id.btnDiesel) {
             btnDiesel.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#757575"))); // Gray
             btnDiesel.setTextColor(Color.WHITE);
+        }
+    }
+
+    /**
+     * Updates selected toggle backgrounds for the Input Mode (Liters/RM)
+     */
+    private void updateModeButtonColors(int checkedId) {
+        ColorStateList transparent = ColorStateList.valueOf(Color.TRANSPARENT);
+        ColorStateList defaultTextColor = ColorStateList.valueOf(Color.parseColor("#333333"));
+        ColorStateList activeBlue = ColorStateList.valueOf(Color.parseColor("#2196F3")); // Blue for RM
+        ColorStateList activeRed = ColorStateList.valueOf(Color.parseColor("#F44336"));  // Red for Liters
+
+        // Reset
+        btnModeLiters.setBackgroundTintList(transparent);
+        btnModeRM.setBackgroundTintList(transparent);
+        btnModeLiters.setTextColor(defaultTextColor);
+        btnModeRM.setTextColor(defaultTextColor);
+
+        // Apply
+        if (checkedId == R.id.btnModeLiters) {
+            btnModeLiters.setBackgroundTintList(activeRed);
+            btnModeLiters.setTextColor(Color.WHITE);
+        } else if (checkedId == R.id.btnModeRM) {
+            btnModeRM.setBackgroundTintList(activeBlue);
+            btnModeRM.setTextColor(Color.WHITE);
         }
     }
 
