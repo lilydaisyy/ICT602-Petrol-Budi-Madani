@@ -163,29 +163,6 @@
             app:cardElevation="0dp"
             app:strokeWidth="0dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ℹ️ What is BUDI MADANI?"
-                    android:textStyle="bold"
-                    android:textSize="15sp"
-                    android:textColor="?attr/colorOnSecondaryContainer"
-                    android:layout_marginBottom="8dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="The BUDI MADANI program provides targeted cash assistance to eligible Malaysians using RON95. Toggle the switch below to apply the estimated savings to your calculation."
-                    android:textSize="13sp"
-                    android:textColor="?attr/colorOnSecondaryContainer"
-                    android:lineSpacingExtra="4dp"/>
-            </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.button.MaterialButton

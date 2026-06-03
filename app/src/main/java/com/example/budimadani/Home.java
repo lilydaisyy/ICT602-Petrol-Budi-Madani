@@ -218,24 +218,22 @@ public class Home extends Fragment {
 
             double fuelUsage = 0;
             double totalPetrolCost = 0;
+            double budiRebate = 0;
 
+            // --- Step 1: Petrol Usage Calculation ---
             if (toggleInputMode.getCheckedButtonId() == R.id.btnModeLiters) {
+                // Input is in Liters
                 fuelUsage = inputValue;
                 totalPetrolCost = fuelUsage * petrolPrice;
             } else {
-                double effectivePricePerLiter = petrolPrice;
+                // Input is in Cash RM
+                // To find true fuel usage based on the actual pump price
 
-                if (checkedPetrolId == R.id.btnRON95 && isEligible) {
-                    effectivePricePerLiter = petrolPrice - BUDI_SUBSIDY_RATE;
-                    if (effectivePricePerLiter <= 0) effectivePricePerLiter = 0.01;
-                }
-
-                fuelUsage = inputValue / effectivePricePerLiter;
-                totalPetrolCost = fuelUsage * petrolPrice;
+                fuelUsage = inputValue / petrolPrice;
+                totalPetrolCost = inputValue;
             }
 
-            double budiRebate = 0.00;
-
+            // --- Step 2: BUDI Rebate Calculation ---
             if (checkedPetrolId == R.id.btnRON95 && isEligible) {
                 budiRebate = fuelUsage * BUDI_SUBSIDY_RATE;
                 tvSummaryBudiPrice.setText(String.format(Locale.getDefault(), "RM %.2f/L", BUDI_SUBSIDY_RATE));
@@ -243,17 +241,19 @@ public class Home extends Fragment {
                 tvSummaryBudiPrice.setText(isEligible ? "Not Eligible" : "Not Applied");
             }
 
-            double finalPayable = totalPetrolCost - budiRebate;
-            if (finalPayable < 0) finalPayable = 0;
+            // --- Step 3: Total Saving (As defined by your assignment image) ---
+            double totalSaving = totalPetrolCost - budiRebate;
+            if (totalSaving < 0) totalSaving = 0;
 
-            tvTotalCost.setText(String.format(Locale.getDefault(), "RM %.2f", finalPayable));
+            // Assuming tvTotalCost is meant to display the final payable/saving value from Step 3
+            tvTotalCost.setText(String.format(Locale.getDefault(), "RM %.2f", totalSaving));
             tvSummaryLiters.setText(String.format(Locale.getDefault(), "%.3f L", fuelUsage));
             tvSummaryPumpPrice.setText(String.format(Locale.getDefault(), "RM %.2f/L", petrolPrice));
             cardSummary.setVisibility(View.VISIBLE);
 
             if (budiRebate > 0) {
                 Toast.makeText(requireContext(),
-                        String.format(Locale.getDefault(), "Subsidy Applied! You saved RM %.2f", budiRebate),
+                        String.format(Locale.getDefault(), "Subsidy Applied! Rebate: RM %.2f", budiRebate),
                         Toast.LENGTH_LONG).show();
             }
 
