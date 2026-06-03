@@ -23,6 +23,8 @@ A mobile application built with Android Studio that helps Malaysian users estima
 * **Name:** Farahanis Suraya Binti Ahmad Kamal
 * **Matric No:** 2025159901
 * **Subject:** ICT602 - Mobile Technology and Development
+* **Course:** CS266 - Bachelor of Information Systems (Hons.) Information Systems Engineering
+* **University:** Universiti Teknologi Mara (UiTM) Jasin, Melaka
 
 ---
 
